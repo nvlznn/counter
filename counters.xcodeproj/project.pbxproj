@@ -12,24 +12,24 @@
 			containerPortal = A10000000000000000000001 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = A10000000000000000000101;
-			remoteInfo = Accum;
+			remoteInfo = counters;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A10000000000000000000011 /* Accum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Accum.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A10000000000000000000012 /* AccumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AccumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10000000000000000000011 /* counters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = counters.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10000000000000000000012 /* counters-ui-tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = counters-ui-tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		A10000000000000000000021 /* Accum */ = {
+		A10000000000000000000021 /* counters */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Accum;
+			path = counters;
 			sourceTree = "<group>";
 		};
-		A10000000000000000000022 /* AccumUITests */ = {
+		A10000000000000000000022 /* counters-ui-tests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = AccumUITests;
+			path = counters-ui-tests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -55,8 +55,8 @@
 		A10000000000000000000002 = {
 			isa = PBXGroup;
 			children = (
-				A10000000000000000000021 /* Accum */,
-				A10000000000000000000022 /* AccumUITests */,
+				A10000000000000000000021 /* counters */,
+				A10000000000000000000022 /* counters-ui-tests */,
 				A10000000000000000000003 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,8 +64,8 @@
 		A10000000000000000000003 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A10000000000000000000011 /* Accum.app */,
-				A10000000000000000000012 /* AccumUITests.xctest */,
+				A10000000000000000000011 /* counters.app */,
+				A10000000000000000000012 /* counters-ui-tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,9 +73,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A10000000000000000000101 /* Accum */ = {
+		A10000000000000000000101 /* counters */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A10000000000000000000401 /* Build configuration list for PBXNativeTarget "Accum" */;
+			buildConfigurationList = A10000000000000000000401 /* Build configuration list for PBXNativeTarget "counters" */;
 			buildPhases = (
 				A10000000000000000000202 /* Sources */,
 				A10000000000000000000201 /* Frameworks */,
@@ -86,18 +86,18 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				A10000000000000000000021 /* Accum */,
+				A10000000000000000000021 /* counters */,
 			);
-			name = Accum;
+			name = counters;
 			packageProductDependencies = (
 			);
-			productName = Accum;
-			productReference = A10000000000000000000011 /* Accum.app */;
+			productName = counters;
+			productReference = A10000000000000000000011 /* counters.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A10000000000000000000102 /* AccumUITests */ = {
+		A10000000000000000000102 /* counters-ui-tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A10000000000000000000402 /* Build configuration list for PBXNativeTarget "AccumUITests" */;
+			buildConfigurationList = A10000000000000000000402 /* Build configuration list for PBXNativeTarget "counters-ui-tests" */;
 			buildPhases = (
 				A10000000000000000000212 /* Sources */,
 				A10000000000000000000211 /* Frameworks */,
@@ -109,13 +109,13 @@
 				A10000000000000000000302 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				A10000000000000000000022 /* AccumUITests */,
+				A10000000000000000000022 /* counters-ui-tests */,
 			);
-			name = AccumUITests;
+			name = counters-ui-tests;
 			packageProductDependencies = (
 			);
-			productName = AccumUITests;
-			productReference = A10000000000000000000012 /* AccumUITests.xctest */;
+			productName = counters-ui-tests;
+			productReference = A10000000000000000000012 /* counters-ui-tests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -137,11 +137,11 @@
 					};
 				};
 			};
-			buildConfigurationList = A10000000000000000000400 /* Build configuration list for PBXProject "Accum" */;
-			developmentRegion = "zh-Hant";
+			buildConfigurationList = A10000000000000000000400 /* Build configuration list for PBXProject "counters" */;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				"zh-Hant",
+				en,
 				Base,
 			);
 			mainGroup = A10000000000000000000002;
@@ -151,8 +151,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A10000000000000000000101 /* Accum */,
-				A10000000000000000000102 /* AccumUITests */,
+				A10000000000000000000101 /* counters */,
+				A10000000000000000000102 /* counters-ui-tests */,
 			);
 		};
 /* End PBXProject section */
@@ -194,7 +194,7 @@
 /* Begin PBXTargetDependency section */
 		A10000000000000000000302 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A10000000000000000000101 /* Accum */;
+			target = A10000000000000000000101 /* counters */;
 			targetProxy = A10000000000000000000301 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -261,7 +261,7 @@
 				DEVELOPMENT_TEAM = 6KB6SVY565;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Accum;
+				INFOPLIST_KEY_CFBundleDisplayName = Counters;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -272,7 +272,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.ino.accum;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.noky.counters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -294,7 +294,7 @@
 				DEVELOPMENT_TEAM = 6KB6SVY565;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Accum;
+				INFOPLIST_KEY_CFBundleDisplayName = Counters;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -305,7 +305,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.ino.accum;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.noky.counters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -324,13 +324,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.ino.AccumUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.noky.counters.ui-tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Accum;
+				TEST_TARGET_NAME = counters;
 			};
 			name = Debug;
 		};
@@ -341,20 +341,20 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.ino.AccumUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.noky.counters.ui-tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Accum;
+				TEST_TARGET_NAME = counters;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A10000000000000000000400 /* Build configuration list for PBXProject "Accum" */ = {
+		A10000000000000000000400 /* Build configuration list for PBXProject "counters" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A10000000000000000000501 /* Debug */,
@@ -363,7 +363,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A10000000000000000000401 /* Build configuration list for PBXNativeTarget "Accum" */ = {
+		A10000000000000000000401 /* Build configuration list for PBXNativeTarget "counters" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A10000000000000000000511 /* Debug */,
@@ -372,7 +372,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A10000000000000000000402 /* Build configuration list for PBXNativeTarget "AccumUITests" */ = {
+		A10000000000000000000402 /* Build configuration list for PBXNativeTarget "counters-ui-tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A10000000000000000000521 /* Debug */,

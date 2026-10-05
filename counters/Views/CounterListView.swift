@@ -5,26 +5,31 @@ struct CounterListView: View {
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \Counter.createdAt) private var counters: [Counter]
     @State private var isAddingCounter = false
+    @State private var editingCounter: Counter?
 
     var body: some View {
         NavigationStack {
             List {
                 ForEach(counters) { counter in
-                    CounterRowView(counter: counter)
-                        .swipeActions {
-                            Button(role: .destructive) {
-                                modelContext.delete(counter)
-                            } label: {
-                                Label("刪除", systemImage: "trash")
-                            }
+                    Button {
+                        editingCounter = counter
+                    } label: {
+                        CounterRowView(counter: counter)
+                    }
+                    .swipeActions {
+                        Button(role: .destructive) {
+                            modelContext.delete(counter)
+                        } label: {
+                            Label("Delete", systemImage: "trash")
                         }
+                    }
                 }
             }
             .listStyle(.insetGrouped)
-            .navigationTitle("Accum")
+            .navigationTitle("Counters")
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
-                    Button("新增計數器", systemImage: "plus") {
+                    Button("New Counter", systemImage: "plus") {
                         isAddingCounter = true
                     }
                 }
@@ -32,30 +37,33 @@ struct CounterListView: View {
             .overlay {
                 if counters.isEmpty {
                     ContentUnavailableView {
-                        Label("還沒有計數器", systemImage: "number")
+                        Label("No Counters", systemImage: "number")
                     } description: {
-                        Text("點一下 \(Image(systemName: "plus")) 新增計數器。")
+                        Text("Tap \(Image(systemName: "plus")) to add a counter.")
                     }
                 }
             }
             .sheet(isPresented: $isAddingCounter) {
                 AddCounterSheet()
             }
+            .sheet(item: $editingCounter) { counter in
+                EditCounterSheet(counter: counter)
+            }
         }
     }
 }
 
-#Preview("空狀態") {
+#Preview("Empty") {
     CounterListView()
         .modelContainer(for: Counter.self, inMemory: true)
 }
 
-#Preview("有資料") {
+#Preview("With Data") {
     let container = try! ModelContainer(
         for: Counter.self,
         configurations: ModelConfiguration(isStoredInMemoryOnly: true)
     )
-    for (name, value) in [("喝水", 6), ("伏地挺身", 120), ("讀完的書", 3)] {
+    for (name, value) in [("Water", 6), ("Push-ups", 120), ("Books Read", 3)] {
         container.mainContext.insert(Counter(name: name, value: value))
     }
     return CounterListView()

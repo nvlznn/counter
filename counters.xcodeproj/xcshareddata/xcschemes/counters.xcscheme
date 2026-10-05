@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A10000000000000000000101"
-               BuildableName = "Accum.app"
-               BlueprintName = "Accum"
-               ReferencedContainer = "container:Accum.xcodeproj">
+               BuildableName = "counters.app"
+               BlueprintName = "counters"
+               ReferencedContainer = "container:counters.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,9 +34,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A10000000000000000000102"
-               BuildableName = "AccumUITests.xctest"
-               BlueprintName = "AccumUITests"
-               ReferencedContainer = "container:Accum.xcodeproj">
+               BuildableName = "counters-ui-tests.xctest"
+               BlueprintName = "counters-ui-tests"
+               ReferencedContainer = "container:counters.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A10000000000000000000101"
-            BuildableName = "Accum.app"
-            BlueprintName = "Accum"
-            ReferencedContainer = "container:Accum.xcodeproj">
+            BuildableName = "counters.app"
+            BlueprintName = "counters"
+            ReferencedContainer = "container:counters.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -73,9 +73,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A10000000000000000000101"
-            BuildableName = "Accum.app"
-            BlueprintName = "Accum"
-            ReferencedContainer = "container:Accum.xcodeproj">
+            BuildableName = "counters.app"
+            BlueprintName = "counters"
+            ReferencedContainer = "container:counters.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

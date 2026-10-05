@@ -2,7 +2,7 @@ import SwiftUI
 import SwiftData
 
 @main
-struct AccumApp: App {
+struct CountersApp: App {
     var body: some Scene {
         WindowGroup {
             CounterListView()

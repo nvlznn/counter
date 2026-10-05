@@ -6,6 +6,7 @@ struct CounterRowView: View {
     var body: some View {
         HStack {
             Text(counter.name)
+                .foregroundStyle(.primary)
                 .layoutPriority(1)
 
             Spacer()
@@ -26,7 +27,7 @@ struct CounterRowView: View {
                     .foregroundStyle(.tint)
             }
             .buttonStyle(.borderless)
-            .accessibilityLabel("加一")
+            .accessibilityLabel("Increment")
             .fixedSize()
         }
         .sensoryFeedback(.impact(weight: .light), trigger: counter.value)

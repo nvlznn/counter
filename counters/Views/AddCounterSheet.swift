@@ -14,21 +14,21 @@ struct AddCounterSheet: View {
     var body: some View {
         NavigationStack {
             Form {
-                TextField("名稱", text: $name)
+                TextField("Name", text: $name)
                     .focused($isNameFocused)
                     .submitLabel(.done)
                     .onSubmit(add)
             }
-            .navigationTitle("新增計數器")
+            .navigationTitle("New Counter")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("取消") {
+                    Button("Cancel") {
                         dismiss()
                     }
                 }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("新增", action: add)
+                    Button("Add", action: add)
                         .disabled(trimmedName.isEmpty)
                 }
             }
