@@ -4,11 +4,14 @@ import SwiftData
 struct EditCounterSheet: View {
     @Environment(\.dismiss) private var dismiss
     @ScaledMetric(relativeTo: .largeTitle) private var wheelHeight = 280
+    private let keyboardGap: CGFloat = 24
+    private let nameRowID = "name"
 
     let counter: Counter
     private let valueRange: ClosedRange<Int>
     @State private var name: String
     @State private var value: Int
+    @FocusState private var isNameFocused: Bool
 
     init(counter: Counter) {
         self.counter = counter
@@ -25,20 +28,36 @@ struct EditCounterSheet: View {
 
     var body: some View {
         NavigationStack {
-            Form {
-                Section {
-                    NumberWheel(value: $value, range: valueRange)
-                        .frame(maxWidth: .infinity)
-                        .frame(height: wheelHeight)
-                }
-                .listRowBackground(Color.clear)
-                .listRowInsets(EdgeInsets())
+            ScrollViewReader { proxy in
+                Form {
+                    Section {
+                        NumberWheel(value: $value, range: valueRange)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: wheelHeight)
+                    }
+                    .listRowBackground(Color.clear)
+                    .listRowInsets(EdgeInsets())
 
-                Section {
-                    LabeledContent("Name") {
-                        TextField("Name", text: $name)
-                            .multilineTextAlignment(.trailing)
-                            .submitLabel(.done)
+                    Section {
+                        LabeledContent("Name") {
+                            TextField("Name", text: $name)
+                                .multilineTextAlignment(.trailing)
+                                .submitLabel(.done)
+                                .focused($isNameFocused)
+                        }
+                        .id(nameRowID)
+                    }
+                }
+                // Keep the name row clear of the keyboard instead of flush against it,
+                // like Reminders.
+                .safeAreaPadding(.bottom, isNameFocused ? keyboardGap : 0)
+                // Scroll once the keyboard has finished appearing; before that the
+                // form has no room to scroll, and the system leaves the row flush
+                // against the keyboard.
+                .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardDidShowNotification)) { _ in
+                    guard isNameFocused else { return }
+                    withAnimation {
+                        proxy.scrollTo(nameRowID, anchor: .bottom)
                     }
                 }
             }
