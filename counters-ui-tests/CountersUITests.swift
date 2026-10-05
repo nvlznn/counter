@@ -56,11 +56,9 @@ final class CountersUITests: XCTestCase {
         app.pickerWheels.firstMatch.adjust(toPickerWheelValue: "5")
 
         let nameField = app.textFields["Name"]
-        // Focus first so the form settles above the keyboard, then double-tap
-        // the right-aligned name to select the whole word.
         nameField.tap()
         XCTAssertTrue(app.keyboards.firstMatch.waitForExistence(timeout: 5))
-        nameField.coordinate(withNormalizedOffset: CGVector(dx: 0.95, dy: 0.5)).doubleTap()
+        nameField.buttons["Clear text"].tap()
         nameField.typeText("Coffee")
         app.navigationBars["Edit Counter"].buttons["Done"].tap()
 
