@@ -12,7 +12,9 @@ struct EditCounterSheet: View {
 
     init(counter: Counter) {
         self.counter = counter
-        self.valueRange = 0...max(9_999, counter.value + 1_000)
+        // A window around the current value keeps the wheel small enough for
+        // accessibility; reopening the sheet re-centers it.
+        self.valueRange = max(0, counter.value - 500)...(counter.value + 500)
         _name = State(initialValue: counter.name)
         _value = State(initialValue: counter.value)
     }

@@ -3,9 +3,10 @@ import SwiftData
 
 @Model
 final class Counter {
-    var name: String
-    var value: Int
-    var createdAt: Date
+    // CloudKit sync requires every stored property to have a default value.
+    var name: String = ""
+    var value: Int = 0
+    var createdAt: Date = Date.now
 
     init(name: String, value: Int = 0) {
         self.name = name
