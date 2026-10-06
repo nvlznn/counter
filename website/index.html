@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+<title>Counters – A simple tally counter</title>
+<meta name="description" content="A simple tally counter for iPhone and iPad.">
+<meta property="og:title" content="Counters">
+<meta property="og:description" content="A simple tally counter for iPhone and iPad.">
+<meta property="og:image" content="icon.png">
+</head>
+<body>
+<header class="container site-header">
+  <a class="brand" href="index.html"><img src="icon.png" alt="" width="32" height="32">Counters</a>
+  <nav><a href="support.html">Support</a><a href="privacy.html">Privacy</a></nav>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <div>
+      <h1>Count anything.<br>Tap once.</h1>
+      <p>A simple tally counter for iPhone and iPad.</p>
+
+      <!-- TODO: after the app is approved, replace "#" with your App Store URL
+           (e.g. https://apps.apple.com/app/id1234567890), then delete
+           aria-disabled="true" and the "coming soon" note below. -->
+      <a class="button" id="app-store-link" href="#" aria-disabled="true">Download on the App Store</a>
+      <p class="note">Coming soon.</p>
+    </div>
+
+    <div class="phone">
+      <div class="screen">
+        <div class="title">Counters</div>
+        <div class="list">
+          <div class="row"><span class="name">Water</span><span class="count">6</span><button class="plus" type="button" aria-label="Increment Water"></button></div>
+          <div class="row"><span class="name">Push-ups</span><span class="count">120</span><button class="plus" type="button" aria-label="Increment Push-ups"></button></div>
+          <div class="row"><span class="name">Books Read</span><span class="count">3</span><button class="plus" type="button" aria-label="Increment Books Read"></button></div>
+          <div class="row"><span class="name">Coffee</span><span class="count">2</span><button class="plus" type="button" aria-label="Increment Coffee"></button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <h3>One tap</h3>
+      <p>Tap + to add one.</p>
+    </div>
+    <div class="feature">
+      <h3>iCloud sync</h3>
+      <p>Your counters follow you across devices.</p>
+    </div>
+    <div class="feature">
+      <h3>Private</h3>
+      <p>No account. No tracking.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="container site-footer">
+  <div><a href="support.html">Support</a><a href="privacy.html">Privacy Policy</a></div>
+  <div>&copy; 2026 Noky</div>
+</footer>
+
+<script>
+  // Make the demo phone interactive: tapping + increments that row's counter.
+  document.querySelectorAll('.row').forEach(function (row) {
+    var count = row.querySelector('.count');
+    row.querySelector('.plus').addEventListener('click', function () {
+      var value = parseInt(count.textContent.replace(/,/g, ''), 10) + 1;
+      count.textContent = value.toLocaleString('en-US');
+    });
+  });
+</script>
+</body>
+</html>
