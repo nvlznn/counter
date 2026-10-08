@@ -14,6 +14,6 @@ struct CountersApp: App {
             CounterListView()
                 .tint(.primary)
         }
-        .modelContainer(for: Counter.self)
+        .modelContainer(for: [Counter.self, CounterEntry.self])
     }
 }

@@ -74,6 +74,47 @@ final class CountersUITests: XCTestCase {
         XCTAssertTrue(renamed.staticTexts["5"].waitForExistence(timeout: 5))
     }
 
+    func testHistory() throws {
+        addCounter(named: "Water")
+
+        // Two quick taps merge into one entry.
+        let row = row(named: "Water")
+        row.buttons["Increment"].tap()
+        row.buttons["Increment"].tap()
+        XCTAssertTrue(row.staticTexts["2"].waitForExistence(timeout: 2))
+
+        row.staticTexts["Water"].tap()
+        let editBar = app.navigationBars["Edit Counter"]
+        XCTAssertTrue(editBar.waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["Created"].exists)
+
+        app.buttons["History"].tap()
+        XCTAssertTrue(app.navigationBars["History"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["+2"].exists)
+        XCTAssertEqual(historyEntries.count, 1)
+
+        // Saving a new value from the edit sheet adds a separate entry.
+        app.navigationBars["History"].buttons.firstMatch.tap()
+        XCTAssertTrue(editBar.waitForExistence(timeout: 5))
+        app.pickerWheels.firstMatch.adjust(toPickerWheelValue: "5")
+        editBar.buttons["Done"].tap()
+        XCTAssertTrue(row.staticTexts["5"].waitForExistence(timeout: 5))
+
+        row.staticTexts["Water"].tap()
+        XCTAssertTrue(editBar.waitForExistence(timeout: 5))
+        app.buttons["History"].tap()
+        XCTAssertTrue(app.navigationBars["History"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["+3"].exists)
+        XCTAssertTrue(app.staticTexts["+2"].exists)
+        XCTAssertEqual(historyEntries.count, 2)
+    }
+
+    /// Entry amounts on the History screen; the list behind the sheet has
+    /// cells too, so counting cells would include its rows.
+    private var historyEntries: XCUIElementQuery {
+        app.staticTexts.matching(NSPredicate(format: "label BEGINSWITH '+'"))
+    }
+
     private func row(named name: String) -> XCUIElement {
         app.cells.containing(.staticText, identifier: name).firstMatch
     }
@@ -87,8 +128,13 @@ final class CountersUITests: XCTestCase {
 
     private func deleteAllCounters() {
         while app.cells.firstMatch.waitForExistence(timeout: 1) {
+            let delete = app.buttons["Delete"]
             app.cells.firstMatch.swipeLeft()
-            app.buttons["Delete"].tap()
+            // The swipe occasionally doesn't reveal the action; try once more.
+            if !delete.waitForExistence(timeout: 2) {
+                app.cells.firstMatch.swipeLeft()
+            }
+            delete.tap()
         }
     }
 }

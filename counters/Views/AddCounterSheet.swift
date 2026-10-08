@@ -47,5 +47,5 @@ struct AddCounterSheet: View {
 
 #Preview {
     AddCounterSheet()
-        .modelContainer(for: Counter.self, inMemory: true)
+        .modelContainer(for: [Counter.self, CounterEntry.self], inMemory: true)
 }

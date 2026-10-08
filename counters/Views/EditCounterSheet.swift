@@ -46,6 +46,16 @@ struct EditCounterSheet: View {
                                 .focused($isNameFocused)
                         }
                         .id(nameRowID)
+
+                        LabeledContent("Created") {
+                            Text(counter.createdAt, format: .dateTime.year().month().day().hour().minute())
+                        }
+                    }
+
+                    Section {
+                        NavigationLink("History") {
+                            CounterHistoryView(counter: counter)
+                        }
                     }
                 }
                 // Keep the name row clear of the keyboard instead of flush against it,
@@ -79,12 +89,12 @@ struct EditCounterSheet: View {
 
     private func save() {
         counter.name = trimmedName
-        counter.value = value
+        counter.setValue(value)
         dismiss()
     }
 }
 
 #Preview {
     EditCounterSheet(counter: Counter(name: "Water", value: 6))
-        .modelContainer(for: Counter.self, inMemory: true)
+        .modelContainer(for: [Counter.self, CounterEntry.self], inMemory: true)
 }

@@ -19,7 +19,7 @@ struct CounterRowView: View {
 
             Button {
                 withAnimation {
-                    counter.value += 1
+                    counter.increment()
                 }
             } label: {
                 Image(systemName: "plus.circle.fill")

@@ -56,12 +56,12 @@ struct CounterListView: View {
 
 #Preview("Empty") {
     CounterListView()
-        .modelContainer(for: Counter.self, inMemory: true)
+        .modelContainer(for: [Counter.self, CounterEntry.self], inMemory: true)
 }
 
 #Preview("With Data") {
     let container = try! ModelContainer(
-        for: Counter.self,
+        for: Counter.self, CounterEntry.self,
         configurations: ModelConfiguration(isStoredInMemoryOnly: true)
     )
     for (name, value) in [("Water", 6), ("Push-ups", 120), ("Books Read", 3)] {
