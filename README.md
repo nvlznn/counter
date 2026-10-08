@@ -10,4 +10,4 @@ Your counters are stored locally on your device and, if iCloud is enabled, in yo
 
 Counters does not use analytics, advertising, tracking, or any third-party services.
 
-If you have any questions, contact: nxzvnn@gmail.com
+If you have any questions, contact: support@noky.dev
